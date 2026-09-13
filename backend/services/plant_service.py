@@ -1,10 +1,30 @@
 # ============================================================
 # AGRIVERSE - PLANT DISEASE AI SERVICE
-# FINAL VERSION
+# MEMORY OPTIMIZED VERSION
 # ============================================================
 
+# ============================================================
+# IMPORTANT:
+# TensorFlow CPU-only configuration
+# ============================================================
+
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["TF_NUM_INTRAOP_THREADS"] = "1"
+os.environ["TF_NUM_INTEROP_THREADS"] = "1"
+
+
+# ============================================================
+# IMPORTS
+# ============================================================
+
+import gc
 import io
 import json
+import threading
 from pathlib import Path
 
 import numpy as np
@@ -51,28 +71,7 @@ if not CLASS_MAP_PATH.exists():
 
 
 # ============================================================
-# LOAD MODEL
-# ============================================================
-
-try:
-
-    model = tf.keras.models.load_model(
-        MODEL_PATH
-    )
-
-    print(
-        f"✅ Plant model loaded successfully: {MODEL_PATH}"
-    )
-
-except Exception as error:
-
-    raise RuntimeError(
-        f"Unable to load Plant AI model: {error}"
-    ) from error
-
-
-# ============================================================
-# LOAD EXACT CLASS MAPPING
+# CLASS MAPPING
 # ============================================================
 
 try:
@@ -150,53 +149,123 @@ if len(set(class_names)) != len(class_names):
 
 
 # ============================================================
-# MODEL OUTPUT VALIDATION
+# LAZY MODEL
 # ============================================================
 
-try:
+model = None
 
-    output_classes = model.output_shape[-1]
-
-except Exception as error:
-
-    raise ValueError(
-        f"Unable to determine model output classes: {error}"
-    ) from error
-
-
-if output_classes != len(class_names):
-
-    raise ValueError(
-        f"Model has {output_classes} output classes, "
-        f"but class mapping contains {len(class_names)} classes."
-    )
+model_lock = threading.Lock()
 
 
 # ============================================================
-# MODEL INPUT VALIDATION
+# LOAD MODEL ONLY WHEN REQUIRED
 # ============================================================
 
-try:
+def load_plant_model():
 
-    input_shape = model.input_shape
+    global model
 
-    print(
-        f"✅ Plant model input shape: {input_shape}"
-    )
+    with model_lock:
 
-    print(
-        f"✅ Plant model output classes: {output_classes}"
-    )
+        if model is not None:
 
-    print(
-        f"✅ Plant classes loaded: {len(class_names)}"
-    )
+            return model
 
-except Exception as error:
+        try:
 
-    print(
-        f"Model information warning: {error}"
-    )
+            print()
+            print(
+                "============================================================"
+            )
+
+            print(
+                "AGRIVERSE: Loading Plant AI model..."
+            )
+
+            print(
+                "============================================================"
+            )
+
+            model = tf.keras.models.load_model(
+                MODEL_PATH
+            )
+
+            print(
+                f"Plant model loaded successfully: {MODEL_PATH}"
+            )
+
+            try:
+
+                output_classes = model.output_shape[-1]
+
+                print(
+                    f"Plant model output classes: "
+                    f"{output_classes}"
+                )
+
+                print(
+                    f"Plant classes loaded: "
+                    f"{len(class_names)}"
+                )
+
+                if output_classes != len(class_names):
+
+                    raise ValueError(
+                        f"Model has {output_classes} output classes, "
+                        f"but class mapping contains "
+                        f"{len(class_names)} classes."
+                    )
+
+            except Exception as error:
+
+                print(
+                    f"Model validation warning: {error}"
+                )
+
+            return model
+
+        except Exception as error:
+
+            model = None
+
+            raise RuntimeError(
+                f"Unable to load Plant AI model: {error}"
+            ) from error
+
+
+# ============================================================
+# RELEASE MODEL MEMORY
+# ============================================================
+
+def release_plant_model():
+
+    global model
+
+    with model_lock:
+
+        if model is not None:
+
+            print(
+                "Releasing Plant AI model from memory..."
+            )
+
+            model = None
+
+            try:
+
+                tf.keras.backend.clear_session()
+
+            except Exception as error:
+
+                print(
+                    f"TensorFlow session cleanup warning: {error}"
+                )
+
+            gc.collect()
+
+            print(
+                "Plant AI model memory released."
+            )
 
 
 # ============================================================
@@ -206,6 +275,7 @@ except Exception as error:
 def preprocess_image(
     image: Image.Image
 ):
+
     """
     Preprocessing MUST match training.
 
@@ -226,14 +296,13 @@ def preprocess_image(
         Image.Resampling.LANCZOS
     )
 
-    # Convert to numpy
+    # Convert to numpy float32
     img = np.asarray(
         image,
         dtype=np.float32
     )
 
-    # IMPORTANT:
-    # This MUST match MobileNetV2 training preprocessing.
+    # MobileNetV2 preprocessing
     img = tf.keras.applications.mobilenet_v2.preprocess_input(
         img
     )
@@ -277,7 +346,7 @@ def get_probabilities(
 
     prediction = np.asarray(
         prediction,
-        dtype=np.float64
+        dtype=np.float32
     )
 
     # --------------------------------------------------------
@@ -325,11 +394,7 @@ def get_probabilities(
 
 
     # --------------------------------------------------------
-    # MobileNetV2 classification output should be
-    # softmax probabilities.
-    #
-    # But keep this protection in case the model returns
-    # logits.
+    # Check whether output is already probability
     # --------------------------------------------------------
 
     probability_sum = float(
@@ -346,6 +411,10 @@ def get_probabilities(
     )
 
 
+    # --------------------------------------------------------
+    # Convert logits to probabilities if necessary
+    # --------------------------------------------------------
+
     if not is_probability_output:
 
         probabilities = tf.nn.softmax(
@@ -356,6 +425,11 @@ def get_probabilities(
     # --------------------------------------------------------
     # Final normalization
     # --------------------------------------------------------
+
+    probabilities = np.asarray(
+        probabilities,
+        dtype=np.float32
+    )
 
     total = float(
         np.sum(probabilities)
@@ -420,6 +494,7 @@ def get_top_predictions(
                     confidence,
                     2
                 )
+
         })
 
 
@@ -503,6 +578,26 @@ async def plant_prediction(
 
 
     # ========================================================
+    # BASIC SIZE PROTECTION
+    # ========================================================
+
+    # Prevent extremely large uploads from consuming memory.
+    # Normal mobile plant photos are much smaller than this.
+
+    max_image_size = 10 * 1024 * 1024
+
+    if len(image_bytes) > max_image_size:
+
+        return {
+            "success": False,
+            "message": (
+                "Image is too large. "
+                "Please upload an image below 10 MB."
+            )
+        }
+
+
+    # ========================================================
     # OPEN IMAGE
     # ========================================================
 
@@ -556,14 +651,23 @@ async def plant_prediction(
     # MODEL PREDICTION
     # ========================================================
 
+    prediction = None
+
     try:
 
-        prediction = model.predict(
+        # Load model only for this prediction
+        current_model = load_plant_model()
+
+        prediction = current_model.predict(
             img,
             verbose=0
         )
 
     except Exception as error:
+
+        print(
+            f"Plant prediction error: {error}"
+        )
 
         return {
             "success": False,
@@ -572,6 +676,36 @@ async def plant_prediction(
             "error":
                 str(error)
         }
+
+    finally:
+
+        # ----------------------------------------------------
+        # IMPORTANT MEMORY CLEANUP
+        # ----------------------------------------------------
+
+        # Delete prediction input after model execution
+        try:
+
+            del img
+
+        except Exception:
+
+            pass
+
+        # Release TensorFlow model
+        release_plant_model()
+
+        # Release temporary image data
+        try:
+
+            del image
+            del image_bytes
+
+        except Exception:
+
+            pass
+
+        gc.collect()
 
 
     # ========================================================
@@ -593,6 +727,18 @@ async def plant_prediction(
             "error":
                 str(error)
         }
+
+    finally:
+
+        try:
+
+            del prediction
+
+        except Exception:
+
+            pass
+
+        gc.collect()
 
 
     # ========================================================
@@ -758,6 +904,18 @@ async def plant_prediction(
     )
 
     print()
+
+
+    # Final cleanup
+    try:
+
+        del probabilities
+
+    except Exception:
+
+        pass
+
+    gc.collect()
 
 
     return result
