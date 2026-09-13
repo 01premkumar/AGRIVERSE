@@ -10,11 +10,8 @@ from backend.routes.soil import router as soil_router
 from backend.routes.assistant import router as assistant_router
 from backend.routes.agriverse import router as agriverse_router
 from backend.routes.crop_timeline import router as crop_timeline_router
-from backend.routes.irrigation import (
-    router as irrigation_router
-)
+from backend.routes.irrigation import router as irrigation_router
 
-# NEW
 from backend.routes.seed import router as seed_router
 from backend.routes.land_preparation import (
     router as land_preparation_router
@@ -32,6 +29,7 @@ from backend.routes.tree import (
     router as tree_router
 )
 
+
 # ============================================================
 # CREATE FASTAPI APP
 # ============================================================
@@ -45,6 +43,18 @@ app = FastAPI(
 
 # ============================================================
 # CORS
+# ============================================================
+#
+# AGRIVERSE uses a PUBLIC Render backend.
+#
+# This allows:
+#   - Flutter Web
+#   - Android APK
+#   - Other phones
+#   - Other browsers
+#
+# Do NOT restrict this to localhost because the deployed
+# application must work from different devices/networks.
 # ============================================================
 
 app.add_middleware(
@@ -99,21 +109,27 @@ app.include_router(crop_timeline_router)
 # ============================================================
 
 app.include_router(seed_router)
+
 app.include_router(
     land_preparation_router
 )
+
 app.include_router(
     fertilizer_router
 )
+
 app.include_router(
     irrigation_router
 )
+
 app.include_router(
     weed_router
 )
+
 app.include_router(
     harvest_router
 )
+
 app.include_router(
     tree_router
 )
