@@ -1,0 +1,22 @@
+{
+  "Rice": {
+    "seed_varieties": ["ADT-43", "CO-51", "CR-1009"],
+    "seed_rate": "20-25 kg/acre",
+    "sowing_method": "Transplanting",
+    "seed_treatment": "Treat with Trichoderma before sowing"
+  },
+
+  "Groundnut": {
+    "seed_varieties": ["TMV-7", "VRI-8"],
+    "seed_rate": "50-60 kg/acre",
+    "sowing_method": "Direct Sowing",
+    "seed_treatment": "Treat with Rhizobium culture"
+  },
+
+  "Cotton": {
+    "seed_varieties": ["Suraj", "RCH-2"],
+    "seed_rate": "1-1.5 kg/acre",
+    "sowing_method": "Direct Sowing",
+    "seed_treatment": "Fungicide Seed Treatment"
+  }
+}

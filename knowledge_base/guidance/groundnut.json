@@ -1,0 +1,26 @@
+{
+  "seed": {
+    "varieties": ["TMV-7", "VRI-8"],
+    "seed_rate": "50-60 kg/acre"
+  },
+
+  "land_preparation": {
+    "steps": ["Deep ploughing", "Fine tilth", "Apply FYM"]
+  },
+
+  "fertilizer": {
+    "organic": ["Farm Yard Manure", "Neem Cake"]
+  },
+
+  "irrigation": {
+    "method": "Drip Irrigation"
+  },
+
+  "weed_management": {
+    "method": "Hand Weeding"
+  },
+
+  "harvesting": {
+    "duration": "110-120 Days"
+  }
+}

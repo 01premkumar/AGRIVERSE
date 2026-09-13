@@ -1,0 +1,287 @@
+{
+  "rice": {
+    "common_weed_problems": [
+      "Weeds can compete with rice plants for water, nutrients, light and space.",
+      "Early weed growth can strongly affect crop establishment."
+    ],
+    "prevention": [
+      "Prepare the field properly before sowing or transplanting.",
+      "Maintain suitable crop spacing for better crop competition against weeds.",
+      "Monitor the field regularly during early crop growth."
+    ],
+    "cultural_control": [
+      "Remove weeds manually where practical.",
+      "Maintain suitable water management according to the rice cultivation method.",
+      "Keep field bunds and channels free from excessive weed growth."
+    ],
+    "organic_management": [
+      "Use suitable organic mulching practices where appropriate.",
+      "Remove weeds before they produce mature seeds."
+    ],
+    "management_timing": [
+      "Give special attention during the early crop growth period.",
+      "Continue field monitoring throughout the crop season."
+    ],
+    "precautions": [
+      "Avoid damaging rice seedlings while removing weeds.",
+      "Do not allow removed weeds containing mature seeds to remain in the field."
+    ]
+  },
+
+  "cotton": {
+    "common_weed_problems": [
+      "Weeds compete with cotton for nutrients, water, light and growing space.",
+      "Early weed competition can reduce crop establishment and growth."
+    ],
+    "prevention": [
+      "Start with a clean and properly prepared field.",
+      "Maintain recommended crop spacing.",
+      "Monitor weeds regularly after crop establishment."
+    ],
+    "cultural_control": [
+      "Use manual weeding where practical.",
+      "Use suitable intercultural operations to control weeds between crop rows.",
+      "Keep field boundaries reasonably free of troublesome weeds."
+    ],
+    "organic_management": [
+      "Use suitable organic mulch to suppress weed emergence where practical.",
+      "Remove weeds before seed formation."
+    ],
+    "management_timing": [
+      "Focus weed management during the early crop growth period.",
+      "Continue monitoring after rainfall because weeds may emerge rapidly."
+    ],
+    "precautions": [
+      "Avoid damaging young cotton plants during mechanical or manual weeding.",
+      "Do not allow weeds to mature and produce seeds."
+    ]
+  },
+
+  "groundnut": {
+    "common_weed_problems": [
+      "Weeds can compete strongly with groundnut for nutrients, water and sunlight.",
+      "Weed competition during early growth can affect crop establishment."
+    ],
+    "prevention": [
+      "Prepare a clean and suitable seedbed.",
+      "Maintain recommended plant spacing.",
+      "Monitor the field regularly after emergence."
+    ],
+    "cultural_control": [
+      "Use manual weeding where suitable.",
+      "Carry out intercultural operations carefully between crop rows.",
+      "Maintain suitable field conditions to reduce weed establishment."
+    ],
+    "organic_management": [
+      "Use suitable organic mulch where practical.",
+      "Remove weeds before flowering and seed production where possible."
+    ],
+    "management_timing": [
+      "Pay particular attention during early crop establishment.",
+      "Continue monitoring after rainfall."
+    ],
+    "precautions": [
+      "Avoid damaging developing groundnut plants during weeding.",
+      "Do not disturb the crop excessively during later growth stages."
+    ]
+  },
+
+  "tomato": {
+    "common_weed_problems": [
+      "Weeds compete with tomato plants for nutrients, water and sunlight.",
+      "Dense weeds can also interfere with field operations and crop management."
+    ],
+    "prevention": [
+      "Prepare clean planting beds before transplanting.",
+      "Maintain suitable plant spacing.",
+      "Inspect the field frequently after irrigation or rainfall."
+    ],
+    "cultural_control": [
+      "Remove weeds manually around plants.",
+      "Use intercultural operations between rows where suitable.",
+      "Maintain clean paths and planting areas."
+    ],
+    "organic_management": [
+      "Use suitable organic mulch around plants to suppress weeds.",
+      "Remove weeds before they produce mature seeds."
+    ],
+    "management_timing": [
+      "Begin monitoring soon after transplanting.",
+      "Give special attention during early vegetative growth."
+    ],
+    "precautions": [
+      "Avoid damaging tomato roots or stems while removing weeds.",
+      "Do not place weed residues carrying mature seeds near planting areas."
+    ]
+  },
+
+  "chilli": {
+    "common_weed_problems": [
+      "Weeds compete with chilli plants for nutrients, water and sunlight.",
+      "Heavy weed growth can interfere with crop growth and field operations."
+    ],
+    "prevention": [
+      "Prepare a clean field before transplanting.",
+      "Maintain suitable plant spacing.",
+      "Regularly inspect the field for new weed emergence."
+    ],
+    "cultural_control": [
+      "Use manual weeding around plants.",
+      "Carry out suitable intercultural operations between rows.",
+      "Keep the planting area reasonably weed-free."
+    ],
+    "organic_management": [
+      "Use suitable organic mulch to reduce weed emergence.",
+      "Remove weeds before seed formation."
+    ],
+    "management_timing": [
+      "Focus management during early crop growth.",
+      "Monitor after irrigation and rainfall."
+    ],
+    "precautions": [
+      "Avoid damaging chilli roots while removing weeds.",
+      "Do not allow weeds to mature and spread seeds."
+    ]
+  },
+
+  "brinjal": {
+    "common_weed_problems": [
+      "Weeds compete with brinjal for nutrients, water and sunlight.",
+      "Heavy weed growth can reduce crop vigour and complicate field operations."
+    ],
+    "prevention": [
+      "Prepare clean planting beds.",
+      "Maintain suitable spacing between plants and rows.",
+      "Regularly inspect the crop for new weed growth."
+    ],
+    "cultural_control": [
+      "Remove weeds manually around plants.",
+      "Use intercultural operations between rows where suitable.",
+      "Keep planting beds clean."
+    ],
+    "organic_management": [
+      "Use suitable organic mulch where practical.",
+      "Remove weeds before they produce mature seeds."
+    ],
+    "management_timing": [
+      "Give special attention during early vegetative growth.",
+      "Continue monitoring throughout the crop season."
+    ],
+    "precautions": [
+      "Avoid damaging roots and stems during weeding.",
+      "Do not allow mature weeds to remain in the field."
+    ]
+  },
+
+  "banana": {
+    "common_weed_problems": [
+      "Weeds compete with banana plants for water, nutrients and space.",
+      "Weed growth around young plants can interfere with establishment."
+    ],
+    "prevention": [
+      "Maintain clean planting basins.",
+      "Remove weeds regularly around young plants.",
+      "Keep the area around irrigation channels reasonably clean."
+    ],
+    "cultural_control": [
+      "Use manual weeding around the plant basin.",
+      "Use suitable mulch to suppress weed growth.",
+      "Maintain clean inter-row areas."
+    ],
+    "organic_management": [
+      "Use suitable organic mulch around the root zone.",
+      "Use weed residues carefully as mulch only when they are not carrying mature seeds."
+    ],
+    "management_timing": [
+      "Pay special attention during establishment of young banana plants.",
+      "Continue monitoring during active growth."
+    ],
+    "precautions": [
+      "Avoid damaging banana roots during weeding.",
+      "Keep mulch away from direct contact with the plant base."
+    ]
+  },
+
+  "mango": {
+    "common_weed_problems": [
+      "Weeds around young mango plants can compete for water and nutrients.",
+      "Heavy weed growth can interfere with orchard management."
+    ],
+    "prevention": [
+      "Maintain a clean basin around young trees.",
+      "Monitor weed growth regularly.",
+      "Avoid allowing weeds to produce mature seeds."
+    ],
+    "cultural_control": [
+      "Remove weeds manually around the tree basin.",
+      "Maintain clean inter-row orchard areas.",
+      "Use suitable mulching practices."
+    ],
+    "organic_management": [
+      "Use organic mulch around the root zone.",
+      "Use weed-free organic material for mulching."
+    ],
+    "management_timing": [
+      "Give special attention around young trees.",
+      "Monitor weed growth during periods of good soil moisture."
+    ],
+    "precautions": [
+      "Avoid damaging tree roots and trunk while removing weeds.",
+      "Keep mulch away from direct contact with the trunk."
+    ]
+  },
+
+  "neem": {
+    "common_weed_problems": [
+      "Young neem plants may face competition from weeds for water and nutrients.",
+      "Dense weeds can interfere with early plant establishment."
+    ],
+    "prevention": [
+      "Keep the planting area reasonably weed-free.",
+      "Monitor weed growth around young plants."
+    ],
+    "cultural_control": [
+      "Remove weeds manually around young plants.",
+      "Maintain a clean planting basin."
+    ],
+    "organic_management": [
+      "Use suitable mulch around young plants to suppress weeds.",
+      "Use clean organic material for mulching."
+    ],
+    "management_timing": [
+      "Focus weed management during the establishment stage.",
+      "Monitor after rainfall."
+    ],
+    "precautions": [
+      "Avoid damaging young roots while removing weeds.",
+      "Keep mulch away from direct stem contact."
+    ]
+  },
+
+  "teak": {
+    "common_weed_problems": [
+      "Young teak plants may face strong competition from surrounding weeds.",
+      "Dense weeds can reduce available light, water and nutrients."
+    ],
+    "prevention": [
+      "Prepare a clean planting area.",
+      "Remove weeds around young plants regularly."
+    ],
+    "cultural_control": [
+      "Use manual weeding around the plant.",
+      "Maintain clean planting basins and inter-row areas."
+    ],
+    "organic_management": [
+      "Use suitable organic mulch around young plants.",
+      "Use clean and mature organic materials for mulching."
+    ],
+    "management_timing": [
+      "Give priority to weed management during early establishment.",
+      "Monitor weed growth during the rainy season."
+    ],
+    "precautions": [
+      "Avoid damaging young teak roots and stems during weeding.",
+      "Prevent mature weeds from producing and spreading seeds."
+    ]
+  }
+}

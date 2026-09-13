@@ -1,0 +1,26 @@
+{
+  "seed": {
+    "varieties": ["ADT-43", "CO-51"],
+    "seed_rate": "20-25 kg/acre"
+  },
+
+  "land_preparation": {
+    "steps": ["Plough the field", "Level the land", "Prepare nursery"]
+  },
+
+  "fertilizer": {
+    "organic": ["Farm Yard Manure", "Vermicompost"]
+  },
+
+  "irrigation": {
+    "method": "Flood Irrigation"
+  },
+
+  "weed_management": {
+    "method": "Manual Weeding"
+  },
+
+  "harvesting": {
+    "duration": "120-150 Days"
+  }
+}

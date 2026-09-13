@@ -1,0 +1,284 @@
+{
+  "cotton": {
+    "seed": {
+      "selection": [
+        "Choose good-quality, certified seeds suitable for the local region.",
+        "Use seeds with good germination quality and avoid damaged or discoloured seeds."
+      ],
+      "treatment": [
+        "Follow the recommended seed-treatment method for the selected cotton variety.",
+        "Use only locally approved treatment products and recommended doses."
+      ],
+      "sowing": [
+        "Maintain the recommended spacing for the selected cotton variety.",
+        "Sow when suitable soil moisture and seasonal conditions are available."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Use healthy seedlings with good root development when transplanting is applicable.",
+        "Avoid weak, damaged or diseased planting material."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Not generally applicable as a sapling-based crop.",
+        "Use healthy planting material appropriate for the selected variety."
+      ]
+    }
+  },
+
+  "rice": {
+    "seed": {
+      "selection": [
+        "Choose a suitable certified rice variety for the local season and farming condition.",
+        "Select clean and healthy seed with good germination quality."
+      ],
+      "treatment": [
+        "Follow the recommended seed-treatment method for the selected rice variety.",
+        "Use clean water and recommended treatment practices."
+      ],
+      "sowing": [
+        "Use the recommended nursery or direct-sowing method for the selected rice variety.",
+        "Maintain suitable spacing and avoid overcrowding."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Select healthy seedlings with good root growth.",
+        "Transplant seedlings at the recommended crop stage."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Rice is not normally established using saplings.",
+        "Use healthy seedlings or suitable direct-seeding material."
+      ]
+    }
+  },
+
+  "groundnut": {
+    "seed": {
+      "selection": [
+        "Select clean, healthy and well-filled seeds.",
+        "Avoid broken, shrivelled or diseased seeds."
+      ],
+      "treatment": [
+        "Follow recommended seed treatment for the selected groundnut variety.",
+        "Use approved treatment methods according to local agricultural guidance."
+      ],
+      "sowing": [
+        "Maintain recommended spacing between plants and rows.",
+        "Sow under suitable soil moisture conditions."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Groundnut is generally established directly from seed.",
+        "If planting material is raised, use only healthy plants."
+      ]
+    },
+    "sapling": {
+      "guidance": ["Saplings are not normally used for groundnut cultivation."]
+    }
+  },
+
+  "tomato": {
+    "seed": {
+      "selection": [
+        "Choose a suitable variety based on season, location and cultivation purpose.",
+        "Use clean, certified seed with good germination quality."
+      ],
+      "treatment": [
+        "Follow the recommended seed-treatment procedure for the selected variety.",
+        "Use approved treatment products and recommended doses."
+      ],
+      "sowing": [
+        "Raise healthy seedlings in a suitable nursery before transplanting.",
+        "Avoid overcrowding in the nursery."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Select healthy seedlings with strong stems and good root development.",
+        "Avoid seedlings showing disease or pest damage.",
+        "Harden seedlings before transplanting when recommended."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Tomato is generally established using seedlings rather than saplings.",
+        "Use healthy transplanting material."
+      ]
+    }
+  },
+
+  "chilli": {
+    "seed": {
+      "selection": [
+        "Choose a suitable chilli variety according to season and cultivation purpose.",
+        "Use clean and healthy certified seed."
+      ],
+      "treatment": [
+        "Follow recommended seed-treatment practices for the chosen variety."
+      ],
+      "sowing": [
+        "Raise healthy seedlings in a suitable nursery.",
+        "Maintain proper nursery spacing and moisture."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Use healthy seedlings with good root development.",
+        "Avoid diseased or damaged seedlings.",
+        "Transplant at the recommended crop stage."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Chilli is generally established using seedlings rather than saplings."
+      ]
+    }
+  },
+
+  "brinjal": {
+    "seed": {
+      "selection": [
+        "Choose a variety suitable for the local season and cultivation conditions.",
+        "Use healthy certified seed."
+      ],
+      "treatment": [
+        "Follow recommended seed-treatment practices for the selected variety."
+      ],
+      "sowing": [
+        "Raise healthy seedlings in a nursery.",
+        "Maintain suitable nursery moisture and spacing."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Select healthy seedlings with strong stems and good roots.",
+        "Avoid seedlings with visible disease or pest damage.",
+        "Transplant carefully to reduce root damage."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Brinjal is normally grown from seedlings rather than saplings."
+      ]
+    }
+  },
+
+  "banana": {
+    "seed": {
+      "selection": [
+        "Banana is normally propagated using suitable planting material rather than conventional seed.",
+        "Use healthy and disease-free planting material."
+      ],
+      "treatment": [
+        "Follow local recommendations for treatment of banana planting material before planting."
+      ],
+      "sowing": [
+        "Plant healthy banana planting material at the recommended spacing.",
+        "Select planting material suitable for the local variety."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Use healthy, disease-free planting material from a reliable source.",
+        "Avoid weak or damaged plants."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Select healthy banana suckers or other recommended planting material.",
+        "Ensure good root development before field planting.",
+        "Avoid visibly diseased planting material."
+      ]
+    }
+  },
+
+  "mango": {
+    "seed": {
+      "selection": [
+        "For commercial orchards, use recommended planting material suitable for the desired variety.",
+        "Seed-grown plants may not maintain the exact characteristics of a selected variety."
+      ],
+      "treatment": [
+        "Use healthy planting material and follow nursery recommendations."
+      ],
+      "sowing": [
+        "Raise planting material in a suitable nursery when required.",
+        "Select planting material suited to the local climate."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Use healthy seedlings with strong root and shoot growth.",
+        "For varietal consistency, use recommended grafted planting material where applicable."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Select healthy, disease-free saplings from a reliable nursery.",
+        "Choose planting material suitable for the local climate and soil.",
+        "Avoid damaged or weak-rooted saplings."
+      ]
+    }
+  },
+
+  "neem": {
+    "seed": {
+      "selection": [
+        "Use mature, healthy seeds collected from healthy trees.",
+        "Prefer fresh planting material with good viability."
+      ],
+      "treatment": [
+        "Follow suitable nursery seed-treatment practices when required."
+      ],
+      "sowing": [
+        "Raise healthy seedlings in a suitable nursery before field planting."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Select healthy seedlings with strong root development.",
+        "Avoid seedlings with physical damage or disease symptoms."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Select healthy neem saplings from a reliable nursery.",
+        "Choose saplings appropriate for the intended planting location."
+      ]
+    }
+  },
+
+  "teak": {
+    "seed": {
+      "selection": [
+        "Use good-quality teak seed or recommended nursery planting material.",
+        "Select planting material suitable for the local environment."
+      ],
+      "treatment": [
+        "Follow recommended nursery treatment practices before sowing."
+      ],
+      "sowing": [
+        "Raise healthy planting material in a suitable nursery.",
+        "Plant healthy material at the recommended stage."
+      ]
+    },
+    "seedling": {
+      "guidance": [
+        "Select healthy seedlings with straight, strong growth.",
+        "Avoid diseased or damaged planting material."
+      ]
+    },
+    "sapling": {
+      "guidance": [
+        "Choose healthy teak saplings from a reliable nursery.",
+        "Ensure the sapling has a healthy root system before planting."
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "Rice": {
+    "season": ["Kharif", "Rabi"],
+    "soil": ["Clay Soil", "Alluvial Soil"],
+    "water_requirement": "High",
+    "duration": "120-150 Days"
+  },
+
+  "Groundnut": {
+    "season": ["Kharif"],
+    "soil": ["Red Soil", "Sandy Soil"],
+    "water_requirement": "Medium",
+    "duration": "110-120 Days"
+  },
+
+  "Cotton": {
+    "season": ["Kharif"],
+    "soil": ["Black Soil"],
+    "water_requirement": "Medium",
+    "duration": "180 Days"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "rice": {
+    "water_requirement": {
+      "level": "High",
+      "guidance": [
+        "Maintain suitable soil moisture throughout the crop growth period.",
+        "Avoid unnecessary continuous flooding when it is not required by the cultivation method.",
+        "Adjust irrigation according to rainfall, soil condition and crop stage."
+      ]
+    },
+    "irrigation_methods": [
+      "Field irrigation",
+      "Controlled water management",
+      "Use suitable field channels for uniform water distribution"
+    ],
+    "irrigation_timing": [
+      "Irrigate according to soil moisture and crop growth stage.",
+      "Reduce unnecessary irrigation when sufficient rainfall has occurred."
+    ],
+    "water_saving": [
+      "Maintain proper field leveling for uniform water distribution.",
+      "Repair field bunds and channels to reduce water losses.",
+      "Monitor soil moisture before additional irrigation."
+    ],
+    "precautions": [
+      "Avoid prolonged unnecessary water stagnation where it is not required.",
+      "Do not irrigate blindly without considering rainfall and soil moisture."
+    ]
+  },
+
+  "cotton": {
+    "water_requirement": {
+      "level": "Medium",
+      "guidance": [
+        "Maintain adequate soil moisture during important crop growth stages.",
+        "Adjust irrigation according to rainfall and soil moisture.",
+        "Avoid both severe moisture stress and excessive water accumulation."
+      ]
+    },
+    "irrigation_methods": [
+      "Drip irrigation",
+      "Furrow irrigation",
+      "Suitable field irrigation based on soil and farm conditions"
+    ],
+    "irrigation_timing": [
+      "Irrigate when the soil moisture becomes insufficient for healthy crop growth.",
+      "Give attention to flowering and boll development stages.",
+      "Reduce unnecessary irrigation after adequate rainfall."
+    ],
+    "water_saving": [
+      "Use drip irrigation where practical.",
+      "Maintain field channels and avoid water leakage.",
+      "Use mulch where suitable to reduce moisture loss."
+    ],
+    "precautions": [
+      "Avoid excessive irrigation and prolonged waterlogging.",
+      "Check soil moisture before each irrigation."
+    ]
+  },
+
+  "groundnut": {
+    "water_requirement": {
+      "level": "Medium",
+      "guidance": [
+        "Provide adequate moisture during crop establishment and important reproductive stages.",
+        "Avoid prolonged waterlogging.",
+        "Adjust irrigation according to soil type and rainfall."
+      ]
+    },
+    "irrigation_methods": [
+      "Furrow irrigation",
+      "Field irrigation",
+      "Drip irrigation where suitable"
+    ],
+    "irrigation_timing": [
+      "Irrigate when soil moisture becomes inadequate.",
+      "Pay attention to flowering and pod development stages.",
+      "Avoid unnecessary irrigation after rainfall."
+    ],
+    "water_saving": [
+      "Maintain good field drainage.",
+      "Use efficient irrigation methods where practical.",
+      "Check soil moisture before irrigation."
+    ],
+    "precautions": [
+      "Avoid prolonged water stagnation.",
+      "Do not over-irrigate during wet conditions."
+    ]
+  },
+
+  "tomato": {
+    "water_requirement": {
+      "level": "Medium to High",
+      "guidance": [
+        "Maintain relatively consistent soil moisture for healthy plant growth.",
+        "Avoid large fluctuations between very dry and excessively wet conditions.",
+        "Adjust irrigation according to weather and crop stage."
+      ]
+    },
+    "irrigation_methods": [
+      "Drip irrigation",
+      "Furrow irrigation where suitable",
+      "Controlled field irrigation"
+    ],
+    "irrigation_timing": [
+      "Irrigate when the upper soil layer becomes sufficiently dry.",
+      "Pay attention to flowering and fruit development stages.",
+      "Adjust irrigation during rainy weather."
+    ],
+    "water_saving": [
+      "Use drip irrigation to deliver water near the root zone.",
+      "Use suitable mulch to reduce evaporation.",
+      "Prevent leakage from irrigation lines."
+    ],
+    "precautions": [
+      "Avoid prolonged waterlogging.",
+      "Avoid wetting foliage unnecessarily where possible."
+    ]
+  },
+
+  "chilli": {
+    "water_requirement": {
+      "level": "Medium",
+      "guidance": [
+        "Maintain adequate soil moisture during vegetative growth, flowering and fruit development.",
+        "Avoid excessive moisture around the root zone.",
+        "Adjust irrigation based on rainfall and soil type."
+      ]
+    },
+    "irrigation_methods": [
+      "Drip irrigation",
+      "Furrow irrigation",
+      "Controlled field irrigation"
+    ],
+    "irrigation_timing": [
+      "Irrigate when available soil moisture becomes insufficient.",
+      "Give attention to flowering and fruiting periods.",
+      "Reduce irrigation when rainfall provides sufficient moisture."
+    ],
+    "water_saving": [
+      "Use drip irrigation where practical.",
+      "Use mulch to reduce evaporation.",
+      "Maintain irrigation channels and pipes properly."
+    ],
+    "precautions": [
+      "Avoid water stagnation.",
+      "Do not over-irrigate young plants."
+    ]
+  },
+
+  "brinjal": {
+    "water_requirement": {
+      "level": "Medium",
+      "guidance": [
+        "Maintain suitable moisture during vegetative growth and fruit development.",
+        "Avoid excessive drying and prolonged wetness.",
+        "Adjust irrigation according to crop stage and weather."
+      ]
+    },
+    "irrigation_methods": [
+      "Drip irrigation",
+      "Furrow irrigation",
+      "Controlled field irrigation"
+    ],
+    "irrigation_timing": [
+      "Irrigate when soil moisture becomes insufficient.",
+      "Give attention during flowering and fruit development.",
+      "Adjust irrigation after rainfall."
+    ],
+    "water_saving": [
+      "Use drip irrigation when practical.",
+      "Apply suitable mulch to reduce water loss.",
+      "Maintain proper drainage."
+    ],
+    "precautions": [
+      "Avoid prolonged waterlogging.",
+      "Check soil moisture before irrigation."
+    ]
+  },
+
+  "banana": {
+    "water_requirement": {
+      "level": "High",
+      "guidance": [
+        "Maintain adequate moisture throughout active crop growth.",
+        "Increase attention to irrigation during dry weather.",
+        "Avoid excessive water stagnation around the root zone."
+      ]
+    },
+    "irrigation_methods": [
+      "Drip irrigation",
+      "Basin irrigation",
+      "Suitable field irrigation"
+    ],
+    "irrigation_timing": [
+      "Irrigate according to soil moisture and climatic conditions.",
+      "Pay particular attention during dry periods and active growth stages.",
+      "Adjust irrigation after significant rainfall."
+    ],
+    "water_saving": [
+      "Use drip irrigation where practical.",
+      "Mulching can help reduce moisture loss.",
+      "Maintain proper drainage and irrigation channels."
+    ],
+    "precautions": [
+      "Avoid prolonged standing water around the plant base.",
+      "Do not allow severe moisture stress."
+    ]
+  },
+
+  "mango": {
+    "water_requirement": {
+      "level": "Medium",
+      "guidance": [
+        "Young mango plants need more regular moisture than established trees.",
+        "Established trees should be irrigated according to season, soil condition and tree growth.",
+        "Adjust irrigation according to rainfall."
+      ]
+    },
+    "irrigation_methods": [
+      "Drip irrigation",
+      "Basin irrigation",
+      "Micro-irrigation where suitable"
+    ],
+    "irrigation_timing": [
+      "Irrigate young plants regularly according to soil moisture.",
+      "For established trees, irrigation should be adjusted to growth stage and weather.",
+      "Reduce unnecessary irrigation during adequate rainfall."
+    ],
+    "water_saving": [
+      "Use drip or micro-irrigation where practical.",
+      "Use mulch around the root zone while keeping it away from direct trunk contact.",
+      "Maintain irrigation lines without leakage."
+    ],
+    "precautions": [
+      "Avoid waterlogging near the trunk.",
+      "Do not place irrigation water directly against the trunk."
+    ]
+  },
+
+  "neem": {
+    "water_requirement": {
+      "level": "Low to Medium",
+      "guidance": [
+        "Young plants require regular moisture for establishment.",
+        "Established trees can generally tolerate drier conditions better.",
+        "Irrigate according to soil moisture and rainfall."
+      ]
+    },
+    "irrigation_methods": [
+      "Basin irrigation",
+      "Drip irrigation",
+      "Manual irrigation for young plants"
+    ],
+    "irrigation_timing": [
+      "Give priority to irrigation during the establishment stage.",
+      "Irrigate during extended dry periods when soil moisture becomes low."
+    ],
+    "water_saving": [
+      "Use mulch around young plants to conserve soil moisture.",
+      "Avoid unnecessary frequent irrigation after establishment."
+    ],
+    "precautions": [
+      "Avoid prolonged waterlogging.",
+      "Do not over-irrigate established trees."
+    ]
+  },
+
+  "teak": {
+    "water_requirement": {
+      "level": "Low to Medium",
+      "guidance": [
+        "Young teak plants need adequate moisture during establishment.",
+        "Established trees generally require less frequent irrigation depending on rainfall and soil condition.",
+        "Provide additional water during extended dry periods when necessary."
+      ]
+    },
+    "irrigation_methods": [
+      "Basin irrigation",
+      "Drip irrigation",
+      "Manual irrigation for young plants"
+    ],
+    "irrigation_timing": [
+      "Pay attention to irrigation during the establishment period.",
+      "Irrigate during prolonged dry conditions based on soil moisture."
+    ],
+    "water_saving": [
+      "Use mulch around young plants to reduce evaporation.",
+      "Avoid unnecessary irrigation after adequate rainfall."
+    ],
+    "precautions": [
+      "Avoid prolonged waterlogging.",
+      "Do not over-irrigate established trees."
+    ]
+  }
+}

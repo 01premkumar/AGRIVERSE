@@ -1,0 +1,7 @@
+{
+  "Kharif": ["Rice", "Cotton", "Groundnut"],
+
+  "Rabi": ["Wheat", "Mustard", "Gram"],
+
+  "Zaid": ["Watermelon", "Cucumber"]
+}

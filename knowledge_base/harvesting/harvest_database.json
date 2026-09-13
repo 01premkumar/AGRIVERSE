@@ -1,0 +1,238 @@
+{
+  "rice": {
+    "maturity_signs": [
+      "Grains become mature and the crop changes from green to a yellowish or golden colour.",
+      "Most grains should have reached the appropriate maturity stage before harvest."
+    ],
+    "harvest_timing": [
+      "Harvest when the crop has reached the recommended maturity stage.",
+      "Avoid harvesting too early because immature grains can reduce grain quality."
+    ],
+    "harvest_method": [
+      "Harvest manually or mechanically using a suitable method for the farm.",
+      "Handle the harvested crop carefully to reduce grain loss."
+    ],
+    "post_harvest": [
+      "Thresh the harvested crop appropriately.",
+      "Dry the grains to a suitable safe moisture level before storage.",
+      "Store cleaned and dried grain in a clean, dry place."
+    ],
+    "precautions": [
+      "Avoid harvesting during unsuitable wet conditions where possible.",
+      "Prevent harvested grain from getting contaminated with soil or moisture."
+    ]
+  },
+
+  "cotton": {
+    "maturity_signs": [
+      "Cotton bolls open fully and the lint becomes clearly visible.",
+      "Harvest when bolls are sufficiently open and the lint is dry."
+    ],
+    "harvest_timing": [
+      "Pick cotton when bolls are properly opened and conditions are dry.",
+      "Multiple pickings may be required as different bolls mature at different times."
+    ],
+    "harvest_method": [
+      "Pick mature cotton carefully to reduce contamination.",
+      "Avoid mixing wet material with dry harvested cotton."
+    ],
+    "post_harvest": [
+      "Keep harvested cotton clean and dry.",
+      "Protect cotton from rain and excess moisture.",
+      "Store in a clean and dry location."
+    ],
+    "precautions": [
+      "Avoid harvesting wet cotton where possible.",
+      "Remove visible foreign material from harvested cotton."
+    ]
+  },
+
+  "groundnut": {
+    "maturity_signs": [
+      "Pods develop fully and show appropriate maturity characteristics.",
+      "Leaves may begin yellowing as the crop approaches maturity."
+    ],
+    "harvest_timing": [
+      "Harvest when the majority of pods have reached suitable maturity.",
+      "Avoid very early harvesting because immature pods may reduce yield and quality."
+    ],
+    "harvest_method": [
+      "Lift or dig the plants carefully to reduce pod losses.",
+      "Shake off excess soil before drying."
+    ],
+    "post_harvest": [
+      "Dry the harvested pods properly before storage.",
+      "Remove damaged or contaminated pods.",
+      "Store in a dry, well-ventilated place."
+    ],
+    "precautions": [
+      "Avoid leaving harvested pods wet for long periods.",
+      "Prevent contamination with soil and fungal growth."
+    ]
+  },
+
+  "tomato": {
+    "maturity_signs": [
+      "Fruit develops the appropriate colour and firmness for the intended market.",
+      "Harvest stage depends on whether the fruit is for local use, transport or storage."
+    ],
+    "harvest_timing": [
+      "Harvest fruits at the appropriate maturity stage for the intended market.",
+      "Regular picking can help maintain continued fruit production."
+    ],
+    "harvest_method": [
+      "Harvest fruits carefully to avoid bruising and stem damage.",
+      "Use clean containers for harvested fruits."
+    ],
+    "post_harvest": [
+      "Sort fruits according to maturity and quality.",
+      "Keep harvested fruits in a cool, clean and protected place.",
+      "Handle fruits gently during transportation."
+    ],
+    "precautions": [
+      "Avoid rough handling and dropping fruits.",
+      "Do not mix damaged or diseased fruits with healthy produce."
+    ]
+  },
+
+  "chilli": {
+    "maturity_signs": [
+      "Fruit colour and firmness change according to the intended harvest stage.",
+      "For dry chilli, fruits should be harvested at suitable maturity before drying."
+    ],
+    "harvest_timing": [
+      "Harvest at the maturity stage required for fresh or dry chilli production.",
+      "Multiple pickings may be required."
+    ],
+    "harvest_method": [
+      "Pick fruits carefully without excessive damage to the plant.",
+      "Use clean harvest containers."
+    ],
+    "post_harvest": [
+      "Sort harvested chilli according to quality.",
+      "For dry chilli, dry properly before storage.",
+      "Store dried produce in a dry and clean place."
+    ],
+    "precautions": [
+      "Avoid mixing diseased or damaged fruits with healthy produce.",
+      "Protect harvested produce from excess moisture."
+    ]
+  },
+
+  "brinjal": {
+    "maturity_signs": [
+      "Harvest fruits when they reach the suitable market maturity and size.",
+      "Fruits should generally remain firm and suitable for the intended market."
+    ],
+    "harvest_timing": [
+      "Harvest regularly once fruits reach marketable maturity.",
+      "Do not allow fruits to become excessively over-mature."
+    ],
+    "harvest_method": [
+      "Cut or pick fruits carefully to reduce damage.",
+      "Use clean containers during harvesting."
+    ],
+    "post_harvest": [
+      "Sort fruits based on quality and maturity.",
+      "Keep harvested fruits protected from excessive heat and moisture."
+    ],
+    "precautions": [
+      "Avoid bruising fruits during harvesting and transport.",
+      "Remove damaged or diseased produce."
+    ]
+  },
+
+  "banana": {
+    "maturity_signs": [
+      "Fruits become sufficiently developed and show the appropriate maturity characteristics for the intended market.",
+      "Harvest maturity depends on the variety and transport requirements."
+    ],
+    "harvest_timing": [
+      "Harvest bunches at the appropriate maturity stage for the intended market.",
+      "Consider transport distance when selecting harvest maturity."
+    ],
+    "harvest_method": [
+      "Cut the bunch carefully to avoid damage to fruits and the plant.",
+      "Handle harvested bunches gently."
+    ],
+    "post_harvest": [
+      "Keep harvested bunches protected from direct sun and physical damage.",
+      "Sort and grade fruits according to quality.",
+      "Use clean storage and transport conditions."
+    ],
+    "precautions": [
+      "Avoid dropping or damaging bunches.",
+      "Keep harvested fruits away from contaminated surfaces."
+    ]
+  },
+
+  "mango": {
+    "maturity_signs": [
+      "Fruit reaches the suitable maturity stage based on variety, colour, size and other maturity characteristics.",
+      "Harvest stage depends on whether the fruits are for local consumption or longer-distance transport."
+    ],
+    "harvest_timing": [
+      "Harvest mature fruits at the appropriate stage for the intended market.",
+      "Avoid harvesting excessively immature fruits unless the marketing system requires it."
+    ],
+    "harvest_method": [
+      "Harvest fruits carefully using suitable picking methods.",
+      "Avoid dropping fruits because bruising can reduce quality."
+    ],
+    "post_harvest": [
+      "Sort fruits according to size and quality.",
+      "Handle harvested fruits carefully during grading and transport.",
+      "Keep produce protected from excessive heat."
+    ],
+    "precautions": [
+      "Avoid damaging the fruit skin during harvest.",
+      "Separate damaged or diseased fruits from healthy produce."
+    ]
+  },
+
+  "neem": {
+    "maturity_signs": [
+      "Neem fruits reach suitable maturity and develop the expected colour and appearance.",
+      "Seeds inside mature fruits should be sufficiently developed."
+    ],
+    "harvest_timing": [
+      "Collect mature fruits when they are suitable for the intended seed or planting use.",
+      "Avoid collecting severely damaged or diseased fruits."
+    ],
+    "harvest_method": [
+      "Collect fruits carefully from the tree or ground depending on the intended use.",
+      "Use clean containers for collection."
+    ],
+    "post_harvest": [
+      "Clean and dry seeds properly before storage.",
+      "Store planting material in suitable dry conditions."
+    ],
+    "precautions": [
+      "Avoid storing wet seeds for long periods.",
+      "Remove damaged or mouldy material."
+    ]
+  },
+
+  "teak": {
+    "maturity_signs": [
+      "Harvest maturity depends on the intended timber production system and planned rotation.",
+      "Tree size, age and plantation management objectives should be considered."
+    ],
+    "harvest_timing": [
+      "Harvest according to the planned plantation rotation and management objectives.",
+      "Follow applicable local forestry and plantation regulations."
+    ],
+    "harvest_method": [
+      "Use appropriate and safe forestry harvesting practices.",
+      "Plan felling and transport to reduce unnecessary damage."
+    ],
+    "post_harvest": [
+      "Process and store timber appropriately.",
+      "Keep harvested timber protected from unnecessary moisture and damage."
+    ],
+    "precautions": [
+      "Follow applicable forestry rules and permissions.",
+      "Use safe procedures and trained personnel for timber harvesting."
+    ]
+  }
+}

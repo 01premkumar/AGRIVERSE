@@ -1,0 +1,26 @@
+{
+  "seed": {
+    "varieties": ["RCH-2", "Suraj"],
+    "seed_rate": "1-1.5 kg/acre"
+  },
+
+  "land_preparation": {
+    "steps": ["Deep ploughing", "Raised bed preparation"]
+  },
+
+  "fertilizer": {
+    "organic": ["Farm Yard Manure", "Vermicompost"]
+  },
+
+  "irrigation": {
+    "method": "Drip Irrigation"
+  },
+
+  "weed_management": {
+    "method": "Mechanical Weeding"
+  },
+
+  "harvesting": {
+    "duration": "180 Days"
+  }
+}

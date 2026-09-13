@@ -1,0 +1,279 @@
+{
+  "rice": {
+    "organic_fertilizers": {
+      "compost": [
+        "Use well-decomposed farm compost as an organic soil amendment.",
+        "Apply compost before planting or during field preparation."
+      ],
+      "farmyard_manure": [
+        "Use well-decomposed farmyard manure.",
+        "Mix the manure properly into the soil during land preparation."
+      ],
+      "vermicompost": [
+        "Vermicompost can be used as an organic nutrient source.",
+        "Use good-quality, mature vermicompost."
+      ],
+      "green_manure": [
+        "Green-manure crops can help add organic matter to the soil.",
+        "Incorporate suitable green manure into the soil before the main crop where appropriate."
+      ]
+    },
+    "application_timing": [
+      "Apply major organic amendments during land preparation.",
+      "Additional application timing should depend on crop stage and local soil conditions."
+    ],
+    "precautions": [
+      "Use only well-decomposed organic manure.",
+      "Avoid applying contaminated or undecomposed material directly around the crop."
+    ]
+  },
+
+  "cotton": {
+    "organic_fertilizers": {
+      "compost": [
+        "Apply well-decomposed compost to improve soil organic matter.",
+        "Incorporate compost into the soil during field preparation."
+      ],
+      "farmyard_manure": [
+        "Use well-decomposed farmyard manure as an organic soil amendment.",
+        "Mix it properly into the soil before planting."
+      ],
+      "vermicompost": [
+        "Good-quality vermicompost can be used as an organic nutrient source.",
+        "Apply according to soil condition and crop requirement."
+      ],
+      "neem_cake": [
+        "Neem cake may be used as an organic soil amendment.",
+        "Use quality material and follow locally recommended application practices."
+      ]
+    },
+    "application_timing": [
+      "Major organic manure is generally incorporated during land preparation.",
+      "Additional organic inputs can be considered according to crop stage and soil condition."
+    ],
+    "precautions": [
+      "Use mature and well-decomposed organic inputs.",
+      "Do not use poor-quality or contaminated manure."
+    ]
+  },
+
+  "groundnut": {
+    "organic_fertilizers": {
+      "compost": [
+        "Use well-decomposed compost to improve soil organic matter.",
+        "Incorporate compost during field preparation."
+      ],
+      "farmyard_manure": [
+        "Use well-decomposed farmyard manure before sowing.",
+        "Mix it uniformly into the soil."
+      ],
+      "vermicompost": [
+        "Vermicompost can be used as an organic nutrient source.",
+        "Use mature vermicompost from a reliable source."
+      ]
+    },
+    "application_timing": [
+      "Apply major organic manure before sowing or during land preparation.",
+      "Additional application should depend on crop condition and soil status."
+    ],
+    "precautions": [
+      "Avoid excessive organic material that may interfere with proper seed establishment.",
+      "Use only well-decomposed materials."
+    ]
+  },
+
+  "tomato": {
+    "organic_fertilizers": {
+      "compost": [
+        "Apply mature compost during soil preparation.",
+        "Mix the compost properly into the planting area."
+      ],
+      "farmyard_manure": [
+        "Use well-decomposed farmyard manure before transplanting.",
+        "Apply uniformly to the prepared soil."
+      ],
+      "vermicompost": [
+        "Vermicompost may be used as an organic nutrient source around the crop.",
+        "Use mature and good-quality vermicompost."
+      ],
+      "neem_cake": [
+        "Neem cake may be incorporated into the soil as an organic amendment.",
+        "Use quality material according to local recommendations."
+      ]
+    },
+    "application_timing": [
+      "Apply major organic manure before transplanting.",
+      "Further organic nutrient support should follow crop stage and local recommendations."
+    ],
+    "precautions": [
+      "Use fully decomposed manure.",
+      "Avoid direct contact between fresh manure and plant roots."
+    ]
+  },
+
+  "chilli": {
+    "organic_fertilizers": {
+      "compost": [
+        "Use well-decomposed compost during field preparation.",
+        "Mix compost uniformly into the planting area."
+      ],
+      "farmyard_manure": [
+        "Apply well-decomposed farmyard manure before transplanting.",
+        "Incorporate it properly into the soil."
+      ],
+      "vermicompost": [
+        "Use mature vermicompost as an organic nutrient source.",
+        "Apply according to crop requirement and soil condition."
+      ],
+      "neem_cake": [
+        "Neem cake can be used as an organic soil amendment.",
+        "Follow locally recommended application practices."
+      ]
+    },
+    "application_timing": [
+      "Apply major organic amendments during land preparation.",
+      "Additional nutrient support should be based on crop stage."
+    ],
+    "precautions": [
+      "Use only mature and well-decomposed organic manure.",
+      "Avoid excessive application."
+    ]
+  },
+
+  "brinjal": {
+    "organic_fertilizers": {
+      "compost": [
+        "Use mature compost during field preparation.",
+        "Mix compost thoroughly into the soil."
+      ],
+      "farmyard_manure": [
+        "Apply well-decomposed farmyard manure before transplanting.",
+        "Spread and incorporate it uniformly."
+      ],
+      "vermicompost": [
+        "Vermicompost can be used as an organic nutrient source.",
+        "Use only mature and good-quality material."
+      ],
+      "neem_cake": [
+        "Neem cake may be used as an organic amendment.",
+        "Follow locally recommended application practices."
+      ]
+    },
+    "application_timing": [
+      "Apply major organic inputs before transplanting.",
+      "Additional application should consider crop stage and soil condition."
+    ],
+    "precautions": [
+      "Use well-decomposed manure only.",
+      "Avoid direct use of fresh manure near plant roots."
+    ]
+  },
+
+  "banana": {
+    "organic_fertilizers": {
+      "compost": [
+        "Apply well-decomposed compost around the planting area.",
+        "Use mature compost to improve soil organic matter."
+      ],
+      "farmyard_manure": [
+        "Use well-decomposed farmyard manure during pit or field preparation.",
+        "Mix it properly with the soil before planting."
+      ],
+      "vermicompost": [
+        "Vermicompost may be used as an organic nutrient source.",
+        "Apply around the plant according to crop stage and local recommendations."
+      ],
+      "neem_cake": [
+        "Neem cake may be used as an organic soil amendment.",
+        "Use quality material and follow locally recommended practices."
+      ]
+    },
+    "application_timing": [
+      "Apply major organic manure during pit preparation or planting preparation.",
+      "Additional organic inputs can be applied according to crop stage."
+    ],
+    "precautions": [
+      "Use well-decomposed material.",
+      "Avoid placing fresh manure directly against the plant base."
+    ]
+  },
+
+  "mango": {
+    "organic_fertilizers": {
+      "compost": [
+        "Apply mature compost around the tree basin.",
+        "Keep the material away from direct contact with the trunk."
+      ],
+      "farmyard_manure": [
+        "Use well-decomposed farmyard manure around the tree according to orchard practice.",
+        "Incorporate it into the soil where appropriate."
+      ],
+      "vermicompost": [
+        "Vermicompost can be used as an organic nutrient source.",
+        "Apply around the active root zone rather than directly against the trunk."
+      ],
+      "neem_cake": [
+        "Neem cake may be used as an organic amendment.",
+        "Use quality material according to local orchard recommendations."
+      ]
+    },
+    "application_timing": [
+      "Organic manure timing should follow orchard growth stage and local recommendations.",
+      "Major applications are generally planned around suitable orchard management periods."
+    ],
+    "precautions": [
+      "Use fully decomposed manure.",
+      "Do not pile organic manure directly against the tree trunk."
+    ]
+  },
+
+  "neem": {
+    "organic_fertilizers": {
+      "compost": [
+        "Use mature compost around the tree or planting area.",
+        "Mix it into the soil where suitable."
+      ],
+      "farmyard_manure": [
+        "Apply well-decomposed farmyard manure around the planting area.",
+        "Keep fresh manure away from direct root or stem contact."
+      ],
+      "vermicompost": [
+        "Vermicompost can be used as an organic nutrient source.",
+        "Use mature material from a reliable source."
+      ]
+    },
+    "application_timing": [
+      "Apply organic amendments according to tree establishment and growth stage.",
+      "Use suitable timing based on local soil and rainfall conditions."
+    ],
+    "precautions": [
+      "Use well-decomposed material.",
+      "Avoid excessive application."
+    ]
+  },
+
+  "teak": {
+    "organic_fertilizers": {
+      "compost": [
+        "Use mature compost around the planting area.",
+        "Incorporate organic matter appropriately into the soil."
+      ],
+      "farmyard_manure": [
+        "Apply well-decomposed farmyard manure during planting preparation.",
+        "Keep fresh manure away from direct stem contact."
+      ],
+      "vermicompost": [
+        "Vermicompost may be used as an organic nutrient source.",
+        "Use mature, good-quality material."
+      ]
+    },
+    "application_timing": [
+      "Apply organic amendments according to tree establishment and growth stage.",
+      "Consider local soil and rainfall conditions when planning application."
+    ],
+    "precautions": [
+      "Use well-decomposed organic material.",
+      "Avoid excessive application around young plants."
+    ]
+  }
+}

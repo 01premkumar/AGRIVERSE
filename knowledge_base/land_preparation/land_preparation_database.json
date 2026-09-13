@@ -1,0 +1,211 @@
+{
+  "rice": {
+    "land_preparation": {
+      "field_clearing": [
+        "Clear weeds, crop residues and unwanted plant material from the field.",
+        "Remove materials that may interfere with field preparation."
+      ],
+      "soil_preparation": [
+        "Prepare the field to obtain suitable soil tilth for rice cultivation.",
+        "Ensure the field has suitable moisture before major land preparation."
+      ],
+      "field_leveling": [
+        "Level the field properly to support uniform water distribution.",
+        "Avoid uneven areas that may cause excessive water accumulation."
+      ],
+      "bed_or_field_preparation": [
+        "Prepare the field according to the selected rice cultivation method.",
+        "Maintain suitable field condition before sowing or transplanting."
+      ]
+    }
+  },
+
+  "cotton": {
+    "land_preparation": {
+      "field_clearing": [
+        "Remove weeds and previous crop residues from the field.",
+        "Keep the field free from unwanted vegetation before sowing."
+      ],
+      "soil_preparation": [
+        "Prepare the soil to obtain a suitable seedbed.",
+        "Ensure adequate soil moisture for effective field preparation."
+      ],
+      "field_leveling": [
+        "Level the field where required for uniform crop establishment.",
+        "Avoid major depressions that can cause uneven moisture conditions."
+      ],
+      "bed_or_field_preparation": [
+        "Prepare suitable rows or beds according to the selected cotton variety and cultivation method.",
+        "Maintain recommended spacing during final field preparation."
+      ]
+    }
+  },
+
+  "groundnut": {
+    "land_preparation": {
+      "field_clearing": [
+        "Remove weeds and previous crop residues before field preparation.",
+        "Ensure the field is free from unwanted plant material."
+      ],
+      "soil_preparation": [
+        "Prepare a loose and suitable seedbed for good seed establishment.",
+        "Avoid excessive soil compaction."
+      ],
+      "field_leveling": [
+        "Provide reasonably even field conditions for uniform crop establishment.",
+        "Avoid areas with prolonged water accumulation."
+      ],
+      "bed_or_field_preparation": [
+        "Prepare suitable rows or beds according to the cultivation method.",
+        "Maintain appropriate spacing for planting."
+      ]
+    }
+  },
+
+  "tomato": {
+    "land_preparation": {
+      "field_clearing": [
+        "Clear weeds and old crop residues before preparing the field.",
+        "Remove diseased plant material where present."
+      ],
+      "soil_preparation": [
+        "Prepare well-drained soil suitable for transplanting.",
+        "Ensure the soil is properly worked before planting."
+      ],
+      "field_leveling": [
+        "Maintain suitable field level to avoid prolonged water stagnation.",
+        "Provide proper drainage where needed."
+      ],
+      "bed_or_field_preparation": [
+        "Prepare raised beds or suitable planting beds according to the cultivation method.",
+        "Maintain recommended plant-to-plant and row spacing."
+      ]
+    }
+  },
+
+  "chilli": {
+    "land_preparation": {
+      "field_clearing": [
+        "Clear weeds and crop residues before planting.",
+        "Remove plant material that may interfere with field preparation."
+      ],
+      "soil_preparation": [
+        "Prepare a suitable and well-drained seedbed for chilli planting.",
+        "Avoid excessive compaction of the soil."
+      ],
+      "field_leveling": [
+        "Maintain even field conditions for proper water distribution.",
+        "Provide drainage where necessary."
+      ],
+      "bed_or_field_preparation": [
+        "Prepare suitable beds for transplanting chilli seedlings.",
+        "Maintain recommended spacing between plants and rows."
+      ]
+    }
+  },
+
+  "brinjal": {
+    "land_preparation": {
+      "field_clearing": [
+        "Remove weeds and previous crop residues from the field.",
+        "Clear the field before final bed preparation."
+      ],
+      "soil_preparation": [
+        "Prepare soil with suitable tilth for transplanting.",
+        "Ensure good drainage before planting."
+      ],
+      "field_leveling": [
+        "Maintain reasonably even field conditions.",
+        "Avoid water stagnation around planting areas."
+      ],
+      "bed_or_field_preparation": [
+        "Prepare suitable beds for transplanting seedlings.",
+        "Maintain recommended row and plant spacing."
+      ]
+    }
+  },
+
+  "banana": {
+    "land_preparation": {
+      "field_clearing": [
+        "Clear weeds, residues and unwanted vegetation from the planting area.",
+        "Keep the field clean before planting."
+      ],
+      "soil_preparation": [
+        "Prepare the soil properly for banana planting.",
+        "Ensure adequate drainage to avoid prolonged water stagnation."
+      ],
+      "field_leveling": [
+        "Provide suitable field level and drainage conditions.",
+        "Avoid low-lying areas where water may remain for long periods."
+      ],
+      "bed_or_field_preparation": [
+        "Prepare planting pits or suitable planting locations according to the cultivation system.",
+        "Maintain recommended spacing for the selected banana variety."
+      ]
+    }
+  },
+
+  "mango": {
+    "land_preparation": {
+      "field_clearing": [
+        "Clear weeds and unwanted vegetation from the orchard area.",
+        "Remove debris from planned planting locations."
+      ],
+      "soil_preparation": [
+        "Prepare the planting area according to the selected orchard system.",
+        "Ensure suitable soil drainage before planting."
+      ],
+      "field_leveling": [
+        "Maintain suitable land slope and drainage conditions.",
+        "Avoid prolonged water stagnation around planting areas."
+      ],
+      "bed_or_field_preparation": [
+        "Mark planting locations according to the recommended orchard spacing.",
+        "Prepare suitable planting pits before planting saplings."
+      ]
+    }
+  },
+
+  "neem": {
+    "land_preparation": {
+      "field_clearing": [
+        "Clear unwanted weeds and vegetation from the planting area.",
+        "Remove debris before planting."
+      ],
+      "soil_preparation": [
+        "Prepare the soil around the planned planting locations.",
+        "Ensure the planting area has suitable drainage."
+      ],
+      "field_leveling": [
+        "Maintain suitable field conditions and avoid waterlogging.",
+        "Provide drainage where required."
+      ],
+      "bed_or_field_preparation": [
+        "Mark suitable planting locations according to the intended spacing.",
+        "Prepare planting pits before placing saplings."
+      ]
+    }
+  },
+
+  "teak": {
+    "land_preparation": {
+      "field_clearing": [
+        "Clear weeds and unwanted vegetation from the planting area.",
+        "Remove debris and obstacles from the planting locations."
+      ],
+      "soil_preparation": [
+        "Prepare the soil adequately before planting.",
+        "Ensure suitable drainage conditions."
+      ],
+      "field_leveling": [
+        "Maintain suitable land conditions and avoid prolonged water stagnation.",
+        "Provide drainage where necessary."
+      ],
+      "bed_or_field_preparation": [
+        "Mark planting locations according to the planned spacing.",
+        "Prepare suitable planting pits before planting saplings."
+      ]
+    }
+  }
+}

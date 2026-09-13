@@ -1,0 +1,170 @@
+{
+  "mango": {
+    "category": "Fruit Tree",
+    "soil": [
+      "Well-drained soil",
+      "Loamy soil",
+      "Suitable red or black soils with good drainage"
+    ],
+    "climate": ["Warm climate", "Suitable tropical and subtropical conditions"],
+    "water_requirement": "Medium",
+    "uses": ["Fruit production", "Home garden", "Commercial orchard"],
+    "guidance": [
+      "Choose a healthy variety suitable for the local climate.",
+      "Ensure good drainage around the planting area.",
+      "Provide adequate water during establishment.",
+      "Maintain suitable spacing between trees."
+    ]
+  },
+
+  "guava": {
+    "category": "Fruit Tree",
+    "soil": ["Well-drained soil", "Loamy soil", "Sandy loam"],
+    "climate": ["Warm climate", "Tropical and subtropical conditions"],
+    "water_requirement": "Medium",
+    "uses": ["Fruit production", "Home garden", "Commercial cultivation"],
+    "guidance": [
+      "Use healthy planting material from a reliable source.",
+      "Choose a well-drained planting location.",
+      "Maintain suitable irrigation during establishment.",
+      "Prune and manage the tree according to the cultivation system."
+    ]
+  },
+
+  "lemon": {
+    "category": "Fruit Tree",
+    "soil": [
+      "Well-drained loamy soil",
+      "Sandy loam",
+      "Light soils with good drainage"
+    ],
+    "climate": ["Warm climate", "Tropical and subtropical conditions"],
+    "water_requirement": "Medium",
+    "uses": ["Fruit production", "Home garden", "Commercial orchard"],
+    "guidance": [
+      "Avoid waterlogged planting locations.",
+      "Use healthy planting material.",
+      "Maintain adequate moisture during establishment.",
+      "Provide sufficient sunlight."
+    ]
+  },
+
+  "coconut": {
+    "category": "Fruit / Plantation Tree",
+    "soil": [
+      "Well-drained sandy soil",
+      "Loamy soil",
+      "Coastal and suitable inland soils with good drainage"
+    ],
+    "climate": ["Warm humid climate", "Tropical conditions"],
+    "water_requirement": "High",
+    "uses": ["Nut production", "Oil production", "Multiple farm uses"],
+    "guidance": [
+      "Choose a location with good drainage.",
+      "Provide adequate moisture, especially during dry periods.",
+      "Maintain suitable spacing between palms.",
+      "Protect young palms from weed competition."
+    ]
+  },
+
+  "neem": {
+    "category": "Multipurpose Tree",
+    "soil": ["Well-drained soil", "Sandy soil", "Loamy soil"],
+    "climate": ["Warm climate", "Dry to semi-dry conditions"],
+    "water_requirement": "Low to Medium",
+    "uses": ["Shade", "Timber", "Traditional uses", "Multipurpose farm tree"],
+    "guidance": [
+      "Use healthy saplings from a reliable nursery.",
+      "Choose a well-drained planting location.",
+      "Provide regular moisture during establishment.",
+      "Reduce irrigation after the tree becomes established according to local conditions."
+    ]
+  },
+
+  "teak": {
+    "category": "Timber Tree",
+    "soil": [
+      "Well-drained soil",
+      "Deep loamy soil",
+      "Suitable forest and plantation soils"
+    ],
+    "climate": ["Warm tropical climate", "Seasonal rainfall conditions"],
+    "water_requirement": "Low to Medium",
+    "uses": ["Timber", "Furniture", "Construction"],
+    "guidance": [
+      "Use healthy planting material.",
+      "Choose a suitable plantation location with adequate drainage.",
+      "Maintain appropriate spacing.",
+      "Follow applicable local forestry and plantation regulations."
+    ]
+  },
+
+  "bamboo": {
+    "category": "Multipurpose / Timber Tree",
+    "soil": [
+      "Well-drained loamy soil",
+      "Moist fertile soil",
+      "Suitable alluvial and garden soils"
+    ],
+    "climate": ["Warm climate", "Tropical and subtropical conditions"],
+    "water_requirement": "Medium to High",
+    "uses": [
+      "Furniture",
+      "Construction",
+      "Handicrafts",
+      "Farm multipurpose use"
+    ],
+    "guidance": [
+      "Plant healthy bamboo material from a reliable source.",
+      "Provide adequate moisture during establishment.",
+      "Avoid prolonged water stagnation.",
+      "Manage clumps regularly to maintain healthy growth."
+    ]
+  },
+
+  "drumstick": {
+    "category": "Fruit / Multipurpose Tree",
+    "soil": ["Well-drained soil", "Sandy loam", "Loamy soil"],
+    "climate": ["Warm climate", "Dry and tropical conditions"],
+    "water_requirement": "Low to Medium",
+    "uses": [
+      "Vegetable production",
+      "Leaf production",
+      "Multipurpose farm use"
+    ],
+    "guidance": [
+      "Choose a well-drained planting location.",
+      "Use healthy planting material.",
+      "Provide adequate moisture during establishment.",
+      "Prune and manage the tree according to the production system."
+    ]
+  },
+
+  "tamarind": {
+    "category": "Fruit / Multipurpose Tree",
+    "soil": ["Well-drained soil", "Loamy soil", "Suitable dryland soils"],
+    "climate": ["Warm tropical climate", "Dry to semi-dry conditions"],
+    "water_requirement": "Low to Medium",
+    "uses": ["Fruit production", "Shade", "Multipurpose farm use"],
+    "guidance": [
+      "Choose a well-drained location.",
+      "Use healthy planting material.",
+      "Provide irrigation during establishment when needed.",
+      "Allow adequate space for tree development."
+    ]
+  },
+
+  "ber": {
+    "category": "Fruit Tree",
+    "soil": ["Well-drained soil", "Sandy loam", "Suitable dryland soils"],
+    "climate": ["Warm dry climate", "Semi-arid conditions"],
+    "water_requirement": "Low to Medium",
+    "uses": ["Fruit production", "Dryland farming", "Home garden"],
+    "guidance": [
+      "Choose a well-drained site.",
+      "Use healthy planting material.",
+      "Provide moisture during establishment.",
+      "Manage pruning according to production needs."
+    ]
+  }
+}

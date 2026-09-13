@@ -1,0 +1,13 @@
+{
+  "Vellore": {
+    "major_crops": ["Rice", "Groundnut", "Millets"]
+  },
+
+  "Salem": {
+    "major_crops": ["Turmeric", "Cotton"]
+  },
+
+  "Thanjavur": {
+    "major_crops": ["Rice", "Sugarcane"]
+  }
+}
