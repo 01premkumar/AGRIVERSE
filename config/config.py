@@ -82,18 +82,20 @@ OUTPUT_PATH.mkdir(
 # WEATHER API CONFIGURATION
 # ==========================================================
 
-# IMPORTANT:
-# Do NOT hardcode the API key here.
+# Render:
+# WEATHER_API_KEY
 #
-# Windows PowerShell:
+# Local development can also use:
+# AGRIVERSE_WEATHER_API_KEY
 #
-# $env:AGRIVERSE_WEATHER_API_KEY="YOUR_NEW_API_KEY"
-#
-# Then start the backend from the same terminal.
+# WEATHER_API_KEY is checked first.
 
 WEATHER_API_KEY = os.getenv(
-    "AGRIVERSE_WEATHER_API_KEY",
-    ""
+    "WEATHER_API_KEY",
+    os.getenv(
+        "AGRIVERSE_WEATHER_API_KEY",
+        ""
+    )
 )
 
 
