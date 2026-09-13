@@ -1,11 +1,10 @@
 # ============================================================
 # AGRIVERSE - PLANT DISEASE AI SERVICE
-# MEMORY OPTIMIZED VERSION
+# TFLITE MEMORY OPTIMIZED VERSION
 # ============================================================
 
 # ============================================================
-# IMPORTANT:
-# TensorFlow CPU-only configuration
+# CPU-ONLY CONFIGURATION
 # ============================================================
 
 import os
@@ -46,10 +45,10 @@ BASE_DIR = Path(__file__).resolve().parents[2]
 
 
 # ============================================================
-# MODEL + CLASS MAPPING PATHS
+# TFLITE MODEL + CLASS MAPPING
 # ============================================================
 
-MODEL_PATH = BASE_DIR / "models" / "plant_model.keras"
+MODEL_PATH = BASE_DIR / "models" / "plant_model.tflite"
 
 CLASS_MAP_PATH = BASE_DIR / "models" / "plant_classes.json"
 
@@ -59,19 +58,21 @@ CLASS_MAP_PATH = BASE_DIR / "models" / "plant_classes.json"
 # ============================================================
 
 if not MODEL_PATH.exists():
+
     raise FileNotFoundError(
-        f"Plant model not found: {MODEL_PATH}"
+        f"Plant TFLite model not found: {MODEL_PATH}"
     )
 
 
 if not CLASS_MAP_PATH.exists():
+
     raise FileNotFoundError(
         f"Plant class mapping not found: {CLASS_MAP_PATH}"
     )
 
 
 # ============================================================
-# CLASS MAPPING
+# LOAD CLASS MAPPING
 # ============================================================
 
 try:
@@ -149,27 +150,37 @@ if len(set(class_names)) != len(class_names):
 
 
 # ============================================================
-# LAZY MODEL
+# TFLITE INTERPRETER
 # ============================================================
 
-model = None
+interpreter = None
 
-model_lock = threading.Lock()
+input_details = None
+
+output_details = None
+
+interpreter_lock = threading.Lock()
 
 
 # ============================================================
-# LOAD MODEL ONLY WHEN REQUIRED
+# LOAD TFLITE INTERPRETER
 # ============================================================
 
-def load_plant_model():
+def load_plant_interpreter():
 
-    global model
+    global interpreter
+    global input_details
+    global output_details
 
-    with model_lock:
+    with interpreter_lock:
 
-        if model is not None:
+        if interpreter is not None:
 
-            return model
+            return (
+                interpreter,
+                input_details,
+                output_details
+            )
 
         try:
 
@@ -179,92 +190,174 @@ def load_plant_model():
             )
 
             print(
-                "AGRIVERSE: Loading Plant AI model..."
+                "AGRIVERSE: Loading Plant TFLite model..."
             )
 
             print(
                 "============================================================"
             )
 
-            model = tf.keras.models.load_model(
-                MODEL_PATH
+            interpreter = tf.lite.Interpreter(
+                model_path=str(MODEL_PATH),
+                num_threads=1
+            )
+
+            interpreter.allocate_tensors()
+
+            input_details = interpreter.get_input_details()
+
+            output_details = interpreter.get_output_details()
+
+
+            # ----------------------------------------------------
+            # INPUT INFORMATION
+            # ----------------------------------------------------
+
+            input_shape = input_details[0]["shape"]
+
+            input_dtype = input_details[0]["dtype"]
+
+
+            print(
+                f"Plant TFLite model loaded: {MODEL_PATH}"
             )
 
             print(
-                f"Plant model loaded successfully: {MODEL_PATH}"
+                f"Plant input shape: {input_shape}"
             )
 
-            try:
+            print(
+                f"Plant input dtype: {input_dtype}"
+            )
 
-                output_classes = model.output_shape[-1]
+            print(
+                f"Plant output count: {len(output_details)}"
+            )
 
-                print(
-                    f"Plant model output classes: "
-                    f"{output_classes}"
+            print(
+                f"Plant classes: {len(class_names)}"
+            )
+
+
+            # ----------------------------------------------------
+            # VALIDATE INPUT SHAPE
+            # ----------------------------------------------------
+
+            if len(input_shape) != 4:
+
+                raise ValueError(
+                    f"Unexpected Plant model input shape: "
+                    f"{input_shape}"
                 )
 
-                print(
-                    f"Plant classes loaded: "
-                    f"{len(class_names)}"
+
+            if int(input_shape[0]) != 1:
+
+                raise ValueError(
+                    "Plant TFLite model must use batch size 1."
                 )
 
-                if output_classes != len(class_names):
 
-                    raise ValueError(
-                        f"Model has {output_classes} output classes, "
-                        f"but class mapping contains "
-                        f"{len(class_names)} classes."
-                    )
+            if int(input_shape[1]) != 224:
 
-            except Exception as error:
-
-                print(
-                    f"Model validation warning: {error}"
+                raise ValueError(
+                    "Plant TFLite model expected image height 224."
                 )
 
-            return model
+
+            if int(input_shape[2]) != 224:
+
+                raise ValueError(
+                    "Plant TFLite model expected image width 224."
+                )
+
+
+            # ----------------------------------------------------
+            # VALIDATE OUTPUT
+            # ----------------------------------------------------
+
+            output_shape = output_details[0]["shape"]
+
+            output_classes = int(
+                output_shape[-1]
+            )
+
+
+            print(
+                f"Plant output shape: {output_shape}"
+            )
+
+            print(
+                f"Plant output classes: {output_classes}"
+            )
+
+
+            if output_classes != len(class_names):
+
+                raise ValueError(
+                    f"Plant TFLite model has "
+                    f"{output_classes} output classes, "
+                    f"but class mapping contains "
+                    f"{len(class_names)} classes."
+                )
+
+
+            print(
+                "Plant TFLite interpreter ready."
+            )
+
+            print(
+                "============================================================"
+            )
+
+            return (
+                interpreter,
+                input_details,
+                output_details
+            )
+
 
         except Exception as error:
 
-            model = None
+            interpreter = None
+
+            input_details = None
+
+            output_details = None
 
             raise RuntimeError(
-                f"Unable to load Plant AI model: {error}"
+                f"Unable to load Plant TFLite model: {error}"
             ) from error
 
 
 # ============================================================
-# RELEASE MODEL MEMORY
+# RELEASE TFLITE INTERPRETER
 # ============================================================
 
-def release_plant_model():
+def release_plant_interpreter():
 
-    global model
+    global interpreter
+    global input_details
+    global output_details
 
-    with model_lock:
+    with interpreter_lock:
 
-        if model is not None:
+        if interpreter is not None:
 
             print(
-                "Releasing Plant AI model from memory..."
+                "Releasing Plant TFLite interpreter..."
             )
 
-            model = None
+            interpreter = None
 
-            try:
+            input_details = None
 
-                tf.keras.backend.clear_session()
-
-            except Exception as error:
-
-                print(
-                    f"TensorFlow session cleanup warning: {error}"
-                )
+            output_details = None
 
             gc.collect()
 
             print(
-                "Plant AI model memory released."
+                "Plant TFLite memory released."
             )
 
 
@@ -277,7 +370,7 @@ def preprocess_image(
 ):
 
     """
-    Preprocessing MUST match training.
+    Preprocessing MUST match MobileNetV2 training.
 
     Training:
     MobileNetV2 preprocess_input
@@ -285,35 +378,212 @@ def preprocess_image(
     Input:
     RGB
     224 x 224
+
+    MobileNetV2 preprocess_input for RGB images
+    converts [0,255] values to approximately [-1,1].
     """
 
+    # --------------------------------------------------------
     # Convert to RGB
+    # --------------------------------------------------------
+
     image = image.convert("RGB")
 
+
+    # --------------------------------------------------------
     # Resize
+    # --------------------------------------------------------
+
     image = image.resize(
         (224, 224),
         Image.Resampling.LANCZOS
     )
 
-    # Convert to numpy float32
+
+    # --------------------------------------------------------
+    # Convert to float32
+    # --------------------------------------------------------
+
     img = np.asarray(
         image,
         dtype=np.float32
     )
 
-    # MobileNetV2 preprocessing
-    img = tf.keras.applications.mobilenet_v2.preprocess_input(
-        img
-    )
 
+    # --------------------------------------------------------
+    # MobileNetV2 preprocessing
+    #
+    # Equivalent to:
+    #
+    # tf.keras.applications.mobilenet_v2.preprocess_input(img)
+    #
+    # This avoids using an extra TensorFlow preprocessing
+    # operation during prediction.
+    # --------------------------------------------------------
+
+    img = (
+        img / 127.5
+    ) - 1.0
+
+
+    # --------------------------------------------------------
     # Add batch dimension
+    # --------------------------------------------------------
+
     img = np.expand_dims(
         img,
         axis=0
     )
 
+
     return img
+
+
+# ============================================================
+# PREPARE INPUT FOR TFLITE
+# ============================================================
+
+def prepare_tflite_input(
+    img,
+    details
+):
+
+    input_info = details[0]
+
+    dtype = input_info["dtype"]
+
+    # --------------------------------------------------------
+    # Float32 / Float16 model
+    # --------------------------------------------------------
+
+    if dtype == np.float32:
+
+        return img.astype(
+            np.float32
+        )
+
+
+    if dtype == np.float16:
+
+        return img.astype(
+            np.float16
+        )
+
+
+    # --------------------------------------------------------
+    # Quantized model
+    # --------------------------------------------------------
+
+    if dtype in (
+        np.uint8,
+        np.int8
+    ):
+
+        scale, zero_point = (
+            input_info["quantization"]
+        )
+
+
+        if scale == 0:
+
+            raise ValueError(
+                "Invalid TFLite input quantization scale."
+            )
+
+
+        quantized = (
+            img / scale
+        ) + zero_point
+
+
+        if dtype == np.uint8:
+
+            quantized = np.clip(
+                quantized,
+                0,
+                255
+            )
+
+        else:
+
+            quantized = np.clip(
+                quantized,
+                -128,
+                127
+            )
+
+
+        return quantized.astype(
+            dtype
+        )
+
+
+    raise ValueError(
+        f"Unsupported TFLite input dtype: {dtype}"
+    )
+
+
+# ============================================================
+# READ TFLITE OUTPUT
+# ============================================================
+
+def get_tflite_output(
+    output,
+    details
+):
+
+    output_info = details[0]
+
+    dtype = output_info["dtype"]
+
+
+    # --------------------------------------------------------
+    # Convert to numpy
+    # --------------------------------------------------------
+
+    output = np.asarray(
+        output
+    )
+
+
+    # --------------------------------------------------------
+    # Dequantize if required
+    # --------------------------------------------------------
+
+    if dtype in (
+        np.uint8,
+        np.int8
+    ):
+
+        scale, zero_point = (
+            output_info["quantization"]
+        )
+
+
+        if scale != 0:
+
+            output = (
+                output.astype(
+                    np.float32
+                )
+                - zero_point
+            ) * scale
+
+
+        else:
+
+            output = output.astype(
+                np.float32
+            )
+
+    else:
+
+        output = output.astype(
+            np.float32
+        )
+
+
+    return output
 
 
 # ============================================================
@@ -325,13 +595,19 @@ def get_confidence_level(
 ) -> str:
 
     if confidence >= 80:
+
         return "High"
 
+
     if confidence >= 60:
+
         return "Medium"
 
+
     if confidence >= 40:
+
         return "Low"
+
 
     return "Very Low"
 
@@ -349,11 +625,27 @@ def get_probabilities(
         dtype=np.float32
     )
 
+
     # --------------------------------------------------------
-    # Validate shape
+    # Remove unnecessary dimensions
     # --------------------------------------------------------
 
-    if prediction.ndim != 2:
+    if prediction.ndim == 1:
+
+        probabilities = prediction
+
+    elif prediction.ndim == 2:
+
+        if prediction.shape[0] != 1:
+
+            raise ValueError(
+                f"Unexpected model batch size: "
+                f"{prediction.shape[0]}"
+            )
+
+        probabilities = prediction[0]
+
+    else:
 
         raise ValueError(
             f"Unexpected model output shape: "
@@ -361,15 +653,11 @@ def get_probabilities(
         )
 
 
-    if prediction.shape[0] != 1:
+    # --------------------------------------------------------
+    # Validate class count
+    # --------------------------------------------------------
 
-        raise ValueError(
-            f"Unexpected model batch size: "
-            f"{prediction.shape[0]}"
-        )
-
-
-    if prediction.shape[1] != len(class_names):
+    if len(probabilities) != len(class_names):
 
         raise ValueError(
             "Model output classes do not match "
@@ -377,11 +665,8 @@ def get_probabilities(
         )
 
 
-    probabilities = prediction[0]
-
-
     # --------------------------------------------------------
-    # Validate numerical values
+    # Validate numbers
     # --------------------------------------------------------
 
     if not np.all(
@@ -394,7 +679,7 @@ def get_probabilities(
 
 
     # --------------------------------------------------------
-    # Check whether output is already probability
+    # Check probability output
     # --------------------------------------------------------
 
     probability_sum = float(
@@ -412,14 +697,33 @@ def get_probabilities(
 
 
     # --------------------------------------------------------
-    # Convert logits to probabilities if necessary
+    # Convert logits if necessary
     # --------------------------------------------------------
 
     if not is_probability_output:
 
-        probabilities = tf.nn.softmax(
+        # Stable softmax using NumPy
+        max_value = np.max(
             probabilities
-        ).numpy()
+        )
+
+        exp_values = np.exp(
+            probabilities - max_value
+        )
+
+        exp_sum = np.sum(
+            exp_values
+        )
+
+        if exp_sum <= 0:
+
+            raise ValueError(
+                "Unable to calculate prediction probabilities."
+            )
+
+        probabilities = (
+            exp_values / exp_sum
+        )
 
 
     # --------------------------------------------------------
@@ -430,6 +734,7 @@ def get_probabilities(
         probabilities,
         dtype=np.float32
     )
+
 
     total = float(
         np.sum(probabilities)
@@ -478,8 +783,11 @@ def get_top_predictions(
 
         index = int(index)
 
+
         confidence = (
-            float(probabilities[index])
+            float(
+                probabilities[index]
+            )
             * 100
         )
 
@@ -578,13 +886,13 @@ async def plant_prediction(
 
 
     # ========================================================
-    # BASIC SIZE PROTECTION
+    # IMAGE SIZE PROTECTION
     # ========================================================
 
-    # Prevent extremely large uploads from consuming memory.
-    # Normal mobile plant photos are much smaller than this.
+    max_image_size = (
+        10 * 1024 * 1024
+    )
 
-    max_image_size = 10 * 1024 * 1024
 
     if len(image_bytes) > max_image_size:
 
@@ -601,6 +909,8 @@ async def plant_prediction(
     # OPEN IMAGE
     # ========================================================
 
+    image = None
+
     try:
 
         image = Image.open(
@@ -609,7 +919,9 @@ async def plant_prediction(
 
         image.load()
 
-        image = image.convert("RGB")
+        image = image.convert(
+            "RGB"
+        )
 
     except (
         UnidentifiedImageError,
@@ -630,6 +942,8 @@ async def plant_prediction(
     # PREPROCESS
     # ========================================================
 
+    img = None
+
     try:
 
         img = preprocess_image(
@@ -648,25 +962,92 @@ async def plant_prediction(
 
 
     # ========================================================
-    # MODEL PREDICTION
+    # TFLITE MODEL PREDICTION
     # ========================================================
 
     prediction = None
 
     try:
 
-        # Load model only for this prediction
-        current_model = load_plant_model()
+        # ----------------------------------------------------
+        # IMPORTANT:
+        #
+        # The lock makes Plant AI prediction single-threaded.
+        # This prevents multiple simultaneous requests from
+        # loading multiple TFLite interpreters and consuming
+        # extra Render memory.
+        # ----------------------------------------------------
 
-        prediction = current_model.predict(
-            img,
-            verbose=0
-        )
+        with interpreter_lock:
+
+            (
+                current_interpreter,
+                current_input_details,
+                current_output_details
+            ) = load_plant_interpreter()
+
+
+            # ------------------------------------------------
+            # Prepare input according to TFLite dtype
+            # ------------------------------------------------
+
+            tflite_input = prepare_tflite_input(
+                img,
+                current_input_details
+            )
+
+
+            # ------------------------------------------------
+            # Set input tensor
+            # ------------------------------------------------
+
+            current_interpreter.set_tensor(
+                current_input_details[0]["index"],
+                tflite_input
+            )
+
+
+            # ------------------------------------------------
+            # Run inference
+            # ------------------------------------------------
+
+            current_interpreter.invoke()
+
+
+            # ------------------------------------------------
+            # Read output tensor
+            # ------------------------------------------------
+
+            raw_output = (
+                current_interpreter.get_tensor(
+                    current_output_details[0]["index"]
+                )
+            )
+
+
+            # ------------------------------------------------
+            # Convert output
+            # ------------------------------------------------
+
+            prediction = get_tflite_output(
+                raw_output,
+                current_output_details
+            )
+
+
+            # ------------------------------------------------
+            # Clear temporary tensor references
+            # ------------------------------------------------
+
+            del tflite_input
+
+            del raw_output
+
 
     except Exception as error:
 
         print(
-            f"Plant prediction error: {error}"
+            f"Plant TFLite prediction error: {error}"
         )
 
         return {
@@ -677,13 +1058,20 @@ async def plant_prediction(
                 str(error)
         }
 
+
     finally:
 
         # ----------------------------------------------------
-        # IMPORTANT MEMORY CLEANUP
+        # Release interpreter after every prediction
         # ----------------------------------------------------
 
-        # Delete prediction input after model execution
+        release_plant_interpreter()
+
+
+        # ----------------------------------------------------
+        # Release image memory
+        # ----------------------------------------------------
+
         try:
 
             del img
@@ -692,18 +1080,24 @@ async def plant_prediction(
 
             pass
 
-        # Release TensorFlow model
-        release_plant_model()
 
-        # Release temporary image data
         try:
 
             del image
+
+        except Exception:
+
+            pass
+
+
+        try:
+
             del image_bytes
 
         except Exception:
 
             pass
+
 
         gc.collect()
 
@@ -728,6 +1122,7 @@ async def plant_prediction(
                 str(error)
         }
 
+
     finally:
 
         try:
@@ -746,7 +1141,9 @@ async def plant_prediction(
     # ========================================================
 
     predicted_index = int(
-        np.argmax(probabilities)
+        np.argmax(
+            probabilities
+        )
     )
 
 
@@ -756,7 +1153,9 @@ async def plant_prediction(
 
 
     confidence = float(
-        probabilities[predicted_index]
+        probabilities[
+            predicted_index
+        ]
     )
 
 
@@ -765,8 +1164,10 @@ async def plant_prediction(
     )
 
 
-    confidence_level = get_confidence_level(
-        confidence_percentage
+    confidence_level = (
+        get_confidence_level(
+            confidence_percentage
+        )
     )
 
 
@@ -774,9 +1175,11 @@ async def plant_prediction(
     # TOP 5 PREDICTIONS
     # ========================================================
 
-    top_predictions = get_top_predictions(
-        probabilities,
-        top_k=5
+    top_predictions = (
+        get_top_predictions(
+            probabilities,
+            top_k=5
+        )
     )
 
 
@@ -798,10 +1201,12 @@ async def plant_prediction(
         )
 
         guidance = {
+
             "message": (
                 "Disease guidance is not available "
                 "for this prediction."
             )
+
         }
 
 
@@ -841,11 +1246,17 @@ async def plant_prediction(
     if confidence < 0.60:
 
         result["warning"] = (
+
             "The model confidence is low. "
+
             "Please upload a clear image of the "
+
             "affected plant leaf in good lighting. "
+
             "For reliable diagnosis, consult a "
+
             "local agriculture expert when needed."
+
         )
 
 
@@ -868,7 +1279,8 @@ async def plant_prediction(
     )
 
     print(
-        f"FINAL PREDICTION : {predicted_class}"
+        f"FINAL PREDICTION : "
+        f"{predicted_class}"
     )
 
     print(
@@ -906,7 +1318,10 @@ async def plant_prediction(
     print()
 
 
-    # Final cleanup
+    # ========================================================
+    # FINAL CLEANUP
+    # ========================================================
+
     try:
 
         del probabilities
@@ -914,6 +1329,7 @@ async def plant_prediction(
     except Exception:
 
         pass
+
 
     gc.collect()
 
